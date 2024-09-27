@@ -81,25 +81,21 @@ const Specialdishes = () => {
         prevArrow: <SamplePrevArrow />
       };
   return (
-    <div className='section-container my-20'>
+    <div className='section-container my-20 relative'>
         <div className='text-left'>
             <p className='subtitle'>Special Dishes</p>
             <h2 className='title md:w-[520px]'>Standout Dishes From Our Menu</h2>
         </div>
 
+        {/*Arrow btn */}
         <div className="md:absolute right-3 top-8 mb-10 md:mr-24">
-            <button onClick={() => slider?.current?.slickPrev()}
-            className=" btn p-2 rounded-full ml-5">
-            <FaAngleLeft className=" h-8 w-8 p-1"/>
-            </button>
-            <button
-            className="bg-green btn p-2 rounded-full ml-5"
-            onClick={() => slider?.current?.slickNext()}>
-            <FaAngleRight className=" h-8 w-8 p-1"/>
-            </button>
+          <button onClick={() => slider?.current?.slickPrev()}
+            className=" btn p-2 rounded-full ml-5"> <FaAngleLeft className=" h-8 w-8 p-1"/></button>
+          <button className="bg-green btn p-2 rounded-full ml-5"
+            onClick={() => slider?.current?.slickNext()}><FaAngleRight className=" h-8 w-8 p-1"/></button>
         </div>
 
-        <Slider {...settings}>
+        <Slider ref={slider} {...settings} className='overflow-hidden mt-10 space-x-5'>
          {
             recipes.map((item,i)=>(
                 <Cards key={i} item={item}/>
