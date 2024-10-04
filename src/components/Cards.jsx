@@ -11,7 +11,7 @@ const Cards = ({item}) => {
     };
   return (
     
-    <div className="card  bg-base-100 w-96 shadow-xl">
+    <div className="card  bg-base-100 w-78 shadow-xl">
         <div className={`rating gap-1 absolute right-2 top-2 p-4 heartStar bg-green ${isLiked ? "text-rose-500" : "text-white"} `}
         onClick={handleLikeToggle}>
             <FaHeart className='h-5 w-5  cursor-pointer'/>
@@ -35,3 +35,4 @@ const Cards = ({item}) => {
 }
 
 export default Cards
+
